@@ -152,6 +152,11 @@ def openapi():
     response = requests.request("GET", replace_name, headers=headers, data=payload,verify=False)
     return (response.text)
     
+@app.get('/ui-spec')
+def uiSpec():
+    f = open('ui-path.json')
+    data = json.load(f)
+    return (data)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=8080)
