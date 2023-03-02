@@ -1,0 +1,251 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "defaultTitle"
+    "description": "defaultDescription",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://cloud.uipath.com"
+    }
+  ],
+  "paths": {
+    "/ibmiruyvjn/TestAutomation/odata/Jobs/UiPath.Server.Configuration.OData.StartJobs": {
+      "post": {
+        "operationId": "UiPath",
+        "summary": "UI path",
+        "description": "Auto generated using Swagger Inspector",
+        "parameters": [
+          {
+            "name": "X-UIPATH-OrganizationUnitId",
+            "in": "header",
+            "required": false,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "default": "4104792"
+            },
+            "example": "4104792"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Jobs_UiPath_Server_Configuration_OData_StartJobs_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns job requisitions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "odata.context": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items":
+                        {
+                          "type": "object",
+                          "properties": {
+                            "Key": {
+                              "type": "string"
+                            },
+                            "StartTime": {
+                              "type": "string"
+                            },
+                            "EndTime": {
+                              "type": "string"
+                            },
+                            "State": {
+                              "type": "string"
+                            },
+                            "JobPriority": {
+                              "type": "string"
+                            },
+                            "SpecificPriorityValue": {
+                              "type": "integer"
+                            },
+                            "ResourceOverwrites": {
+                              "type": "string"
+                            },
+                            "Source": {
+                              "type": "string"
+                            },
+                            "SourceType": {
+                              "type": "string"
+                            },
+                            "BatchExecutionKey": {
+                              "type": "string"
+                            },
+                            "Info": {
+                              "type": "string"
+                            },
+                            "CreationTime": {
+                              "type": "string"
+                            },
+                            "StartingScheduleId": {
+                              "type": "string"
+                            },
+                            "ReleaseName": {
+                              "type": "string"
+                            },
+                            "Type": {
+                              "type": "string"
+                            },
+                            "InputArguments": {
+                              "type": "string"
+                            },
+                            "OutputArguments": {
+                              "type": "string"
+                            },
+                            "HostMachineName": {
+                              "type": "string"
+                            },
+                            "HasMediaRecorded": {
+                              "type": "boolean"
+                            },
+                            "HasVideoRecorded": {
+                              "type": "string"
+                            },
+                            "PersistenceId": {
+                              "type": "string"
+                            },
+                            "ResumeVersion": {
+                              "type": "string"
+                            },
+                            "StopStrategy": {
+                              "type": "string"
+                            },
+                            "RuntimeType": {
+                              "type": "string"
+                            },
+                            "RequiresUserInteraction": {
+                              "type": "boolean"
+                            },
+                            "ReleaseVersionId": {
+                              "type": "string"
+                            },
+                            "EntryPointPath": {
+                              "type": "string"
+                            },
+                            "OrganizationUnitId": {
+                              "type": "integer"
+                            },
+                            "OrganizationUnitFullyQualifiedName": {
+                              "type": "string"
+                            },
+                            "Reference": {
+                              "type": "string"
+                            },
+                            "ProcessType": {
+                              "type": "string"
+                            },
+                            "ProfilingOptions": {
+                              "type": "string"
+                            },
+                            "ResumeOnSameContext": {
+                              "type": "boolean"
+                            },
+                            "LocalSystemAccount": {
+                              "type": "string"
+                            },
+                            "OrchestratorUserIdentity": {
+                              "type": "string"
+                            },
+                            "RemoteControlAccess": {
+                              "type": "string"
+                            },
+                            "MaxExpectedRunningTimeSeconds": {
+                              "type": "string"
+                            },
+                            "Id": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Jobs_UiPath_Server_Configuration_OData_StartJobs_body": {
+        "type": "object",
+        "properties": {
+          "startInfo": {
+            "$ref": "#/components/schemas/ibmiruyvjnTestAutomationodataJobsUiPath.Server.Configuration.OData.StartJobs_startInfo"
+          }
+        }
+      },
+      "ibmiruyvjnTestAutomationodataJobsUiPath.Server.Configuration.OData.StartJobs_startInfo": {
+        "type": "object",
+        "properties": {
+          "InputArguments": {
+            "type": "string",
+            "default": ""
+          },
+          "JobsCount": {
+            "type": "integer",
+            "default": 1
+          },
+          "Strategy": {
+            "type": "string",
+            "default": "ModernJobsCount"
+          },
+          "ReleaseKey": {
+            "type": "string",
+            "default": "1f4196cc-af89-4859-b027-051f3ee813b9"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://cloud.uipath.com/identity_/connect/token",
+            "scopes": {
+              "OR.Jobs": "Orchestrator Scope for Jobs",
+              "OR.Queues": "Orchestrator Scope for Queues",
+              "OR.Tasks": "Orchestrator Scope for Tasks",
+              "OR.Folders": "Orchestrator Scope for Folders",
+              "OR.Machines": "Orchestrator Scope for Machines",
+              "OR.Robots": "Orchestrator Scope for Robots",
+              "OR.Execution": "Orchestrator Scope for Execution"
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2": [
+        "OR.Jobs",
+        "OR.Queues",
+        "OR.Tasks",
+        "OR.Folders",
+        "OR.Machines",
+        "OR.Robots",
+        "OR.Execution"
+      ]
+    }
+  ]
+}
