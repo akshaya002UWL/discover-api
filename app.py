@@ -50,6 +50,7 @@ def root():
 
 @app.get('/common-assets')
 def commonassets():
+    url = request.args.get("url")
     url = "https://cpd-ibm-cloudpaks.icp4auto-partnership-2bd2c162965d593cc66365794b1d3a7f-0000.jp-tok.containers.appdomain.cloud/bas/dba/studio/platform/common-assets/"
     payload={}
     headers = {
@@ -145,15 +146,17 @@ def openapi():
     name = request.args.get("name")
     project_name = request.args.get("project_name")
 
-    url = "https://cpd-ibm-cloudpaks.cp4ba-mission-16bf47a9dc965a843455de9f2aef2035-0000.eu-de.containers.appdomain.cloud/bawaut/automationservices/rest/<project_name>/<name>/docs"
+    url = "https://cpd-ibm-cloudpaks.icp4auto-partnership-2bd2c162965d593cc66365794b1d3a7f-0000.jp-tok.containers.appdomain.cloud/bawaut/automationservices/rest/<project_name>/<name>/docs"
     reeplace_projectName = url.replace("<project_name>",project_name)
     replace_name = reeplace_projectName.replace("<name>",name)
 
     payload={}
     headers = {
-    'Authorization': 'Basic Y2VhZG1pbjpjZWFkbWluMTIz'
-    
-    }
+        'BPMCSRFToken': 'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgzMDM5NzUsInN1YiI6ImNlYWRtaW4ifQ.zsXfh13Ps8P1zf4ZqebUGxJF87XXQUs83EiKH36hym0',
+        'Accept': 'application/json',
+        'Authorization': 'Basic Y2VhZG1pbjpjZWFkbWluMTIz',
+        'Cookie': 'BAS-JSESSIONID=0000MORj4MM7LbZcbChXbaewO6l:89871766-68ff-4602-8fce-69846f5d05d0; __preloginurl__=/bas/dba/studio/platform/common-assets/; basLtpaToken2=DWX3lyWMw0HHJDk9y5WXiDbSd3khUKB4Z2Bjtc+l6MWJRYrBSUxU/6JcklN+c5UyAXTUPZprf2G68N+Hh2GyimNEjOt9huWyGgLQG6xKZPiMV/EgAsHOENqK8vLjtaesOaI+TFrmGx+dUzwQ6jr9BYLZtOxOtXxx8KQbe8nfJILFy7qv5kUCfHzjr4fLNAqumGoz2FqeSGqOyN+qKMgAzUNaBdsZpIHMfjhOgOPeTJ+13Y5M1sP2irmQZzFS7IdVmhwKcYdJlXhq7+NAYUUmNyOxqJvPkAR3Uisyr1ZtXq12Bg4OC81t2oSzqcJNjcM4Kzs/8pQqZDKFkmh6INNcjuMNFIfxbLU3vBKVbHHSpUa3OD97KjEXD0mgu3zg2TgRgX/O4lYnkH7+9Nfd6uEQfNX2gxSxxrP80+k+SQifOXW++MWyf0t7Pc9su0VtAYAL'
+        }
     print(replace_name)
     response = requests.request("GET", replace_name, headers=headers, data=payload,verify=False)
     return (response.text)
