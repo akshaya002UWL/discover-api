@@ -54,7 +54,7 @@ def commonassets():
     url = "https://cpd-ibm-cloudpaks.icp4auto-partnership-2bd2c162965d593cc66365794b1d3a7f-0000.jp-tok.containers.appdomain.cloud/bas/dba/studio/platform/common-assets/"
     payload={}
     headers = {
-    'BPMCSRFToken': 'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgzMDM5NzUsInN1YiI6ImNlYWRtaW4ifQ.zsXfh13Ps8P1zf4ZqebUGxJF87XXQUs83EiKH36hym0',
+    'BPMCSRFToken': 'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgzNDQ5MjksInN1YiI6ImNlYWRtaW4ifQ.QpGgToe5Kw7xYAWdoSXF4oNLJAsHh6VK7IIcYOK6uCU',
     'Accept': 'application/json',
     'Authorization': 'Basic Y2VhZG1pbjpjZWFkbWluMTIz',
     'Cookie': 'BAS-JSESSIONID=0000MORj4MM7LbZcbChXbaewO6l:89871766-68ff-4602-8fce-69846f5d05d0; __preloginurl__=/bas/dba/studio/platform/common-assets/; basLtpaToken2=DWX3lyWMw0HHJDk9y5WXiDbSd3khUKB4Z2Bjtc+l6MWJRYrBSUxU/6JcklN+c5UyAXTUPZprf2G68N+Hh2GyimNEjOt9huWyGgLQG6xKZPiMV/EgAsHOENqK8vLjtaesOaI+TFrmGx+dUzwQ6jr9BYLZtOxOtXxx8KQbe8nfJILFy7qv5kUCfHzjr4fLNAqumGoz2FqeSGqOyN+qKMgAzUNaBdsZpIHMfjhOgOPeTJ+13Y5M1sP2irmQZzFS7IdVmhwKcYdJlXhq7+NAYUUmNyOxqJvPkAR3Uisyr1ZtXq12Bg4OC81t2oSzqcJNjcM4Kzs/8pQqZDKFkmh6INNcjuMNFIfxbLU3vBKVbHHSpUa3OD97KjEXD0mgu3zg2TgRgX/O4lYnkH7+9Nfd6uEQfNX2gxSxxrP80+k+SQifOXW++MWyf0t7Pc9su0VtAYAL'
@@ -70,7 +70,7 @@ def detail():
     print(getURL)
     payload={}
     headers = {
-    'BPMCSRFToken': 'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgzMDM5NzUsInN1YiI6ImNlYWRtaW4ifQ.zsXfh13Ps8P1zf4ZqebUGxJF87XXQUs83EiKH36hym0',
+    'BPMCSRFToken': 'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgzNDQ5MjksInN1YiI6ImNlYWRtaW4ifQ.QpGgToe5Kw7xYAWdoSXF4oNLJAsHh6VK7IIcYOK6uCU',
     'Accept': 'application/json',
     'Authorization': 'Basic Y2VhZG1pbjpjZWFkbWluMTIz',
     'Cookie': 'BAS-JSESSIONID=0000MORj4MM7LbZcbChXbaewO6l:89871766-68ff-4602-8fce-69846f5d05d0; __preloginurl__=/bas/dba/studio/platform/common-assets/; basLtpaToken2=DWX3lyWMw0HHJDk9y5WXiDbSd3khUKB4Z2Bjtc+l6MWJRYrBSUxU/6JcklN+c5UyAXTUPZprf2G68N+Hh2GyimNEjOt9huWyGgLQG6xKZPiMV/EgAsHOENqK8vLjtaesOaI+TFrmGx+dUzwQ6jr9BYLZtOxOtXxx8KQbe8nfJILFy7qv5kUCfHzjr4fLNAqumGoz2FqeSGqOyN+qKMgAzUNaBdsZpIHMfjhOgOPeTJ+13Y5M1sP2irmQZzFS7IdVmhwKcYdJlXhq7+NAYUUmNyOxqJvPkAR3Uisyr1ZtXq12Bg4OC81t2oSzqcJNjcM4Kzs/8pQqZDKFkmh6INNcjuMNFIfxbLU3vBKVbHHSpUa3OD97KjEXD0mgu3zg2TgRgX/O4lYnkH7+9Nfd6uEQfNX2gxSxxrP80+k+SQifOXW++MWyf0t7Pc9su0VtAYAL'
@@ -152,7 +152,7 @@ def openapi():
 
     payload={}
     headers = {
-        'BPMCSRFToken': 'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgzMDM5NzUsInN1YiI6ImNlYWRtaW4ifQ.zsXfh13Ps8P1zf4ZqebUGxJF87XXQUs83EiKH36hym0',
+        'BPMCSRFToken': 'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgzNDQ5MjksInN1YiI6ImNlYWRtaW4ifQ.QpGgToe5Kw7xYAWdoSXF4oNLJAsHh6VK7IIcYOK6uCU',
         'Accept': 'application/json',
         'Authorization': 'Basic Y2VhZG1pbjpjZWFkbWluMTIz',
         'Cookie': 'BAS-JSESSIONID=0000MORj4MM7LbZcbChXbaewO6l:89871766-68ff-4602-8fce-69846f5d05d0; __preloginurl__=/bas/dba/studio/platform/common-assets/; basLtpaToken2=DWX3lyWMw0HHJDk9y5WXiDbSd3khUKB4Z2Bjtc+l6MWJRYrBSUxU/6JcklN+c5UyAXTUPZprf2G68N+Hh2GyimNEjOt9huWyGgLQG6xKZPiMV/EgAsHOENqK8vLjtaesOaI+TFrmGx+dUzwQ6jr9BYLZtOxOtXxx8KQbe8nfJILFy7qv5kUCfHzjr4fLNAqumGoz2FqeSGqOyN+qKMgAzUNaBdsZpIHMfjhOgOPeTJ+13Y5M1sP2irmQZzFS7IdVmhwKcYdJlXhq7+NAYUUmNyOxqJvPkAR3Uisyr1ZtXq12Bg4OC81t2oSzqcJNjcM4Kzs/8pQqZDKFkmh6INNcjuMNFIfxbLU3vBKVbHHSpUa3OD97KjEXD0mgu3zg2TgRgX/O4lYnkH7+9Nfd6uEQfNX2gxSxxrP80+k+SQifOXW++MWyf0t7Pc9su0VtAYAL'
