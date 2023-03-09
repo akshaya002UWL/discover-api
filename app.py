@@ -55,9 +55,9 @@ def commonassets():
     payload={}
     headers = {
     #'BPMCSRFToken':'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgzNjU5MjAsInN1YiI6ImNlYWRtaW4ifQ.UFNxL6nxUsK_UtCVuZ5kaMc3AokEqlynli_yA-EOgAs',
-    #'Accept': 'application/json',
-    #'Authorization': 'Basic Y2VhZG1pbjpjZWFkbWluMTIz',
-    'ZenApiKey': 'Y2VhZG1pbjpJZ3RlYmcyUzByM1VlVUN0c3BrZXpSQjEwZHRyZHpQM00yY296YTZX',
+    'Accept': 'application/json',
+    #Authorization': 'Basic Y2VhZG1pbjpjZWFkbWluMTIz',
+    'Authorization': 'ZenApiKey Y2VhZG1pbjpJZ3RlYmcyUzByM1VlVUN0c3BrZXpSQjEwZHRyZHpQM00yY296YTZX',
     }
     print(headers)
     response = requests.request("GET", url, headers=headers, data=payload,verify=False)
@@ -71,10 +71,10 @@ def detail():
     print(getURL)
     payload={}
     headers = {
-    'BPMCSRFToken': 'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgzNjU5MjAsInN1YiI6ImNlYWRtaW4ifQ.UFNxL6nxUsK_UtCVuZ5kaMc3AokEqlynli_yA-EOgAs',
+    #'BPMCSRFToken':'eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzgzNjU5MjAsInN1YiI6ImNlYWRtaW4ifQ.UFNxL6nxUsK_UtCVuZ5kaMc3AokEqlynli_yA-EOgAs',
     'Accept': 'application/json',
-    'Authorization': 'Basic Y2VhZG1pbjpjZWFkbWluMTIz',
-    'Cookie': 'BAS-JSESSIONID=0000MORj4MM7LbZcbChXbaewO6l:89871766-68ff-4602-8fce-69846f5d05d0; __preloginurl__=/bas/dba/studio/platform/common-assets/; basLtpaToken2=DWX3lyWMw0HHJDk9y5WXiDbSd3khUKB4Z2Bjtc+l6MWJRYrBSUxU/6JcklN+c5UyAXTUPZprf2G68N+Hh2GyimNEjOt9huWyGgLQG6xKZPiMV/EgAsHOENqK8vLjtaesOaI+TFrmGx+dUzwQ6jr9BYLZtOxOtXxx8KQbe8nfJILFy7qv5kUCfHzjr4fLNAqumGoz2FqeSGqOyN+qKMgAzUNaBdsZpIHMfjhOgOPeTJ+13Y5M1sP2irmQZzFS7IdVmhwKcYdJlXhq7+NAYUUmNyOxqJvPkAR3Uisyr1ZtXq12Bg4OC81t2oSzqcJNjcM4Kzs/8pQqZDKFkmh6INNcjuMNFIfxbLU3vBKVbHHSpUa3OD97KjEXD0mgu3zg2TgRgX/O4lYnkH7+9Nfd6uEQfNX2gxSxxrP80+k+SQifOXW++MWyf0t7Pc9su0VtAYAL'
+    #Authorization': 'Basic Y2VhZG1pbjpjZWFkbWluMTIz',
+    'Authorization': 'ZenApiKey Y2VhZG1pbjpJZ3RlYmcyUzByM1VlVUN0c3BrZXpSQjEwZHRyZHpQM00yY296YTZX',
     }
     response = requests.request("GET", getURL, headers=headers, data=payload,verify=False)
     return (response.text)
@@ -171,14 +171,13 @@ def uiSpec():
 @app.get('/openapi_ADS')
 def openapi_ADS():
     decision_id = request.args.get("id")
-    url = "https://cpd-ibm-cloudpaks.icp4auto-partnership-2bd2c162965d593cc66365794b1d3a7f-0000.jp-tok.containers.appdomain.cloud/<decision_id>?optional_parts=interface"
+    url = "https://cpd-ibm-cloudpaks.icp4auto-partnership-2bd2c162965d593cc66365794b1d3a7f-0000.jp-tok.containers.appdomain.cloud/bas/dba/studio/platform/common-assets/<decision_id>?optional_parts=interface,operations"
     encoded_decision_id=urllib.parse.quote(decision_id, safe='')
     print("decisionid encoded",encoded_decision_id)
     replace_decision_id_url= url.replace("<decision_id>",encoded_decision_id)
     payload={}
     headers = {
-        #'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkplYXBsQUdrUEhqbXQ3c2ZibHNmRkNmN09uSjE1blY2UFEwM3dYcFZFRUkifQ.eyJ1c2VybmFtZSI6ImNlYWRtaW4iLCJzdWIiOiJjZWFkbWluIiwiaXNzIjoiS05PWFNTTyIsImF1ZCI6IkRTWCIsInJvbGUiOiJBZG1pbiIsInBlcm1pc3Npb25zIjpbImFkbWluaXN0cmF0b3IiLCJjYW5fcHJvdmlzaW9uIiwibWFuYWdlLWRhdGEtYWNjZXNzIiwibWFuYWdlLXRlbXBsYXRlLWRhc2hib2FyZHMiLCJjYW5fYWRtaW5pc3RyYXRlX2J1c2luZXNzX3RlYW1zIiwiY2FuX3dvcmtfd2l0aF9iYV9hdXRvbWF0aW9ucyJdLCJncm91cHMiOlsxMDAwMF0sInVpZCI6IjEwMDAzMzEwMDIiLCJhdXRoZW50aWNhdG9yIjoiZXh0ZXJuYWwiLCJkaXNwbGF5X25hbWUiOiJjZWFkbWluIiwiY2FuX3JlZnJlc2hfdW50aWwiOjE2NzgzNzk0NzE4MDcsImNzcmZfdG9rZW4iOiI0Nzg3MjBlNjJiZDZiNmYxZjBmMTBkZDBjNWQ4ZjY1NiIsInNlc3Npb25faWQiOiI0ZWU1YmU2MC0xNmUzLTRhOTYtOTQ2MC02ODk4MGZhMTVhY2IiLCJpYW0iOnsiYWNjZXNzVG9rZW4iOiJkZGU5MzBjYWE0MDRhZjJlMjZhNDcyMGVkMjdhM2IwOTMxNDE1YmZjMDc1NWUyODI3Mzk2MDc2ZDdkZDgwYmMyNTdmOWYzZGVhMWI2OGM0ODE5ZmI5NWMxMDQ0MmE1ODg0ZDZkNDQzYTMyNWY5ZWQxNGEzMjRlM2Y2ZDlmMDcwYjM3Y2RkM2ZmZmI4NTMwYWY2NTRjNTQ1Yjk2ZmM4N2E0NThjZmU3ODI1YWI5NzRmYWY4MmRhNzk5MGZmODJjYjJhYzFkNzVmNzdmNDc2NWI3NGRhM2U4NjRmNzdmYzFkZDVmYmZlNmVjNDNiNzZjZTMzMzk4MGQ2NzIwZjhmZmFhZTVlODM4NjBkODg1NmZlMTI1MTU5ZjdmM2RhOThlMzMxMTcyZGE5MzU1OGI2NzA2ODdjNDdjMDNhMjg1NjE5MmRkZTlmMDNhMWI5ZjljZTUzZWZlNWJiMTgyZjFhZTJjMTk0MjlmM2Y3ZmY0NzYxZWQ2YzdjOTM3NWE4MWRkYmFmYjIxZGViZGE3MWVlMzBlM2VjNTU0YjdhMDEyNTRmMGU3ZThmNTZmMGUyZmI4MDJkNDUzN2MxYTdlOWIxNWZmNGQyMTQ5NmQ1YjUyNTg0ZjRhOTNkOWE0YjBhNDIxMDQ4MGFiOTAxMjlhZmM1MGY4NmFhNTllZmU3ZjRiYzMzOTk1ZTNjMDcwMjM5ZDJkZTIzZDdkOGI1NGQ1NGRjMzczZDg5NTAzMTc4MmU3YjNlYTRiMWM3NjI3ZDM2MWQxMmFhM2NkNzU3NWQzMDEwMzVkNmU0NTA2Y2I4NWRkMTU0MzNmOTU4NTdhZTQ0ZDliNzdkMmY5N2Y0M2IzODczY2E3ZWFiNDhmMmRmZTA5MzhiNTZmNDMzZWY1ZmNjNjUzZDhhZTg5NjY2ZGVkY2UxNDExZjhlNTVlYWE3NDM4NGVjN2IwYTgzYjk0ZDQ1YTkzNDI3OWM3MTAyNTNhMzg2ZTJmNmE4NmE0OTIwNWU2YTJhZDMyZjQwZGQxMGI0M2IwMDg0Y2Q0M2VlZTFiMmJiZTY0YzZjYThiYzAzMWYxZDM3ZDUwYWViMTQyNjcyZjY1MzBlNTc2YjUwMGQ3NGE5OGY0NGI1YzUxNzZhYzI5MzdhZDMyYmZlYWNiZGUwZGI4YzI5NDc5ZWE3ZTRiY2I3ZTA5NzczNzUwODNjYTMzYWFlY2Q1NjViZGE1NGI5M2YxZWI0Y2QyZmNiZjc0OTg5NGFlZTYwMGZkMjcwY2Y0MTlhY2EzMmNlYjhkNDVlNjRjZjVjMGY3YjNlMzM1MmFjNDM2ZWMwNjg4OTk4ZWM4YjQ2NzY5OTFjZGEwMmE3ZjhjNmRlMWM4YzU3MWVjZGQwNzEyIn0sImlhdCI6MTY3ODMzNjMwNywiZXhwIjoxNjc4Mzc5NTA3fQ.EPRrMTxvAq2AJSTFMijO-QbAgdvqHH-5ZT-tHvG967lvOPPA32pEWszj70Y9g-aL_WYah0gsGJS8SODXPLGaDhUtS4kuuBQxeD7YG4goyvwNFeo8elCmto_WbHy85QNijSoha9PWyUEHYKX29IOXFG-yhdLHle8gjRIv3zsuCSFwm6aNFuFnSJ45HMYB2FXD4t2_gqphVSH8qhshehEQwp-VFF6LT2jrOskDjapKZkwuMCMnT192YkpC4dE0mLCC6EnXg84RUgIBDD_uVCBU2MCbpXS8a6nPBRtTDjPvlDc8U9a2juMkSLlz4lnhP_OCcIUKgAv5mBxL75XVT8XjJA',
-         'ZenApiKey': 'Y2VhZG1pbjpJZ3RlYmcyUzByM1VlVUN0c3BrZXpSQjEwZHRyZHpQM00yY296YTZX',
+        'Authorization': 'ZenApiKey Y2VhZG1pbjpJZ3RlYmcyUzByM1VlVUN0c3BrZXpSQjEwZHRyZHpQM00yY296YTZX',
         }
     print("url",replace_decision_id_url)
 
